@@ -1,0 +1,85 @@
+<p>home works!</p>
+<h2>Employee Details</h2>
+
+<!-- <mat-form-field appearance="fill" color="primary">
+  <mat-label>Input</mat-label>
+  <input matInput>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Select</mat-label>
+  <mat-select>
+    <mat-option value="one">CSE</mat-option>
+    <mat-option value="two">IT</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Textarea</mat-label>
+  <textarea matInput></textarea>
+</mat-form-field> -->
+<form  [formGroup]="loginForm" (ngSubmit)="addData(loginForm.value)">
+  <div>
+      <label>Enter your name</label>:
+      <input type="text" placeholder="Name" formControlName="name" name="name" #n>
+  </div>
+  <span style="color: red;" *ngIf="name && name.invalid && name.touched">This input field is not valid</span>
+      <br>
+      <br>
+  <div>
+      <label>Enter Your Age</label>:
+      <input type="text" placeholder="Age" formControlName="age">
+  </div>
+  <span style="color: red;" *ngIf="age && age.invalid && age.touched">This input field is not valid</span>
+      <br>
+      <br>
+  <div>
+      <label>Enter your mobile number</label>:
+      <input type="text" placeholder="number" formControlName="number">
+  </div>
+  <span style="color: red;" *ngIf="number && number.invalid && number.touched">This input field is not valid</span>
+      <br>
+      <br>
+   <div>
+      <label> Enter your Email</label>:
+      <input type="email" placeholder="Email" formControlName="email">
+  </div>
+  <span style="color: red;" *ngIf="email && email.invalid && email.touched">This input field is not valid</span>
+      <br>
+      <br>
+      <div >
+          
+          <p>
+              Gender:<input type="radio" value="male" name="gender"  formControlName="gender" > Male
+              <input type="radio" value="female" name="gender" formControlName="gender"> Female
+           </p>
+      </div>
+      <span style="color: red;" *ngIf="gender && gender.invalid && gender.touched">This input field is not valid</span>
+      <br>
+      <br>
+      <div>
+       <label >Department</label>:
+              <select formControlName="department" >
+                  <option selected="selected">CSE</option>
+                  <option>IT</option>
+                  <option >MECH</option>
+              </select>
+      </div> 
+      <span style="color: red;" *ngIf="department && department.invalid && department.touched">This input field is not valid</span>
+      <br>
+      <br> 
+      <div>
+          <label>Enter your pincode</label>:
+          <input type="text" placeholder="pincode" formControlName="pincode" >
+          
+      </div>  
+      <span style="color: red;" *ngIf="pincode && pincode.invalid && pincode.touched">This input field is not valid</span>  
+      <br>
+      <br>
+      <div>
+          <label>Enter your address</label>:
+          <textarea cols="20" rows="5" placeholder="address"></textarea>
+      </div> 
+      <span style="color: red;" *ngIf="address && address.invalid && address.touched">This input field is not valid</span>
+      <br>
+      
+      <button style="color:rgb(5, 5, 17);">Submit</button>
+  </form>

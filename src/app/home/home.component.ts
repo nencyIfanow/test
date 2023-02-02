@@ -38,7 +38,14 @@ export class HomeComponent  {
   displayval:any='';
   addData(val:any){
     this.MasterService.changeMessage(this.loginForm.value.name);
-    this.router.navigate(["/details"]);
+    this.MasterService.changeMessage2(this.loginForm.value.age);
+    this.MasterService.changeMessage3(this.loginForm.value.number);
+    this.MasterService.changeMessage4(this.loginForm.value.email);
+    this.MasterService.changeMessage5(this.loginForm.value.gender);
+    this.MasterService.changeMessage6(this.loginForm.value.department);
+    this.MasterService.changeMessage7(this.loginForm.value.pincode);
+    this.MasterService.changeMessage8(this.loginForm.value.address);
+    // this.router.navigate(["/details"]);
     
     console.log(this.loginForm.value);
     this.displayval=val;
